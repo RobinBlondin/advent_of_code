@@ -16,12 +16,12 @@ public class Solution {
     }
     public static void main(String[] args) {
         Solution solution = new Solution();
-        solution.solution();
+        solution.readFile();
         solution.part1();
         solution.part2();
     }
 
-    public void solution() {
+    public void readFile() {
         try (BufferedReader br = new BufferedReader(new FileReader(getPath()))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -58,7 +58,7 @@ public class Solution {
                 sum++;
             }
         }
-        System.out.println(sum);
+        System.out.println("Part 1: " + sum);
     }
 
     public void part2() {
@@ -79,7 +79,7 @@ public class Solution {
                 sum++;
             }
         }
-        System.out.println(sum);
+        System.out.println("Part 2: " + sum);
     }
 
     public String getPath() {
