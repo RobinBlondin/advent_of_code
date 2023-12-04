@@ -40,12 +40,12 @@ public class LotteryTicket {
         this.points = points;
     }
 
-    public int getNumberOfTicketsWon() {
-        return numberOfTicketsWon;
-    }
-
     public int getPoints() {
         return points * multiplier;
+    }
+
+    public int getNumberOfTicketsWon() {
+        return numberOfTicketsWon;
     }
 
     public void addMultiplier() {
