@@ -63,7 +63,7 @@ public class Solution {
     }
 
     public String getPath() {
-        String[] arr = "year2022.day5".split("\\.");
+        String[] arr = "year2022.day5.txt".split("\\.");
         String year = arr[0].replace("year", "");
         String day = arr[1];
         return String.format("files/%s/%s.txt", year, day);
