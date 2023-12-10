@@ -23,20 +23,22 @@ public class Solution {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        List<Long> list = new ArrayList<>();
-        long low = 2;
-        long high = 200000000;
-        long result = 0;
-        while(low < high) {
-            long mid = (low + high) / 2;
-            if (solution.part2(mid)) {
-                list.add(mid);
-                high = mid - 1;
-            } else {
-                low = mid + 1;
+        List<Long> results = new ArrayList<>();
+
+            long min = 1;
+            long max = 1100;
+
+            while(min <= max) {
+                long mid = min + (max - min) / 2;
+                if (solution.part2(mid)) {
+                    results.add(mid);
+                    max = mid - 1;
+                } else {
+                    min = mid + 1;
+                }
             }
-        }
-        System.out.println(Collections.min(list));
+
+        System.out.println(results);
     }
 
     public void part1() {
@@ -62,11 +64,10 @@ public class Solution {
         System.out.println(min);
     }
 
-    public boolean part2(long input) {
+    public boolean part2(Long input) {
         boolean found = false;
         boolean foundMatch = false;
-        /*outerLoop:
-        for (long m = 10000000; m < 20000000; m++) {*/
+
             long number = input;
             for (int i = converter.size() - 1; i >= 0; i--) {
 
@@ -98,10 +99,8 @@ public class Solution {
                     }
                 }
             }
+            System.out.println("no match found: ");
             return false;
-       /*}
-        if (!foundMatch)
-            System.out.println("no match found: ");*/
     }
 
     public void readFile() {
